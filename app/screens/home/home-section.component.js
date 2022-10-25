@@ -21,11 +21,11 @@ export default HomeSection;
 const styles = StyleSheet.create({
   container: {
     marginTop: 24,
-    paddingHorizontal: 16,
   },
   titleContainer: {
-    marginBottom: 8,
+    marginBottom: 12,
     flexDirection: 'row',
+    paddingHorizontal: 16,
     alignItems: 'flex-end',
     justifyContent: 'space-between',
   },
