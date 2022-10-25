@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Clock} from '../../assets/svgs';
+import {TimeInfo} from '../../components';
 import {colors, fonts} from '../../styles';
 
 const NextScheduleCard = ({
@@ -16,12 +16,12 @@ const NextScheduleCard = ({
       <Text style={styles.dayText}>{dayjs(date).format('dddd')}</Text>
       <Text style={styles.dateText}>{dayjs(date).format('D MMM')}</Text>
       <Text style={styles.locationText}>{location}</Text>
-      <View style={styles.timeContainer}>
-        <Clock width={18} height={18} />
-        <Text style={styles.timeText}>
-          {startTime} - {endTime}
-        </Text>
-      </View>
+      <TimeInfo
+        startTime={startTime}
+        endTime={endTime}
+        iconSize={18}
+        textStyle={styles.timeText}
+      />
     </View>
   );
 };
@@ -53,10 +53,6 @@ const styles = StyleSheet.create({
     ...fonts.semiBold,
     color: colors.black,
     fontSize: 13,
-  },
-  timeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
   },
   timeText: {
     fontSize: 12,

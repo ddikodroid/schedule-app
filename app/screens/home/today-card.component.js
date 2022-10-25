@@ -1,19 +1,25 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Clock} from '../../assets/svgs';
+import {TimeInfo} from '../../components';
 import {colors, fonts} from '../../styles';
 import ClockComp from './clock.component';
 
-const TodayCard = ({start, end, location, clockIn = null, clockOut = null}) => {
+const TodayCard = ({
+  startTime,
+  endTime,
+  location,
+  clockIn = null,
+  clockOut = null,
+}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.locationText}>{location}</Text>
-      <View style={styles.timeContainer}>
-        <Clock width={18} height={18} />
-        <Text style={styles.timeText}>
-          {start} - {end}
-        </Text>
-      </View>
+      <TimeInfo
+        startTime={startTime}
+        endTime={endTime}
+        iconSize={18}
+        textStyle={styles.timeText}
+      />
       <View style={styles.clockContainer}>
         <ClockComp type="in" />
         <ClockComp type="out" />
@@ -36,10 +42,6 @@ const styles = StyleSheet.create({
     ...fonts.semiBold,
     color: colors.black,
     fontSize: 15,
-  },
-  timeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
   },
   timeText: {
     fontSize: 13,
