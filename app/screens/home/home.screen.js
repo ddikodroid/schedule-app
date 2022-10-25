@@ -1,14 +1,16 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {Screen} from '../../components';
+import HomeHeader from './home-header.component';
 
-const DetailScreen = () => {
+const HomeScreen = () => {
   return (
-    <View>
-      <Text>DetailScreen</Text>
-    </View>
+    <Screen>
+      <HomeHeader />
+    </Screen>
   );
 };
 
-export default DetailScreen;
+export default HomeScreen;
 
 const styles = StyleSheet.create({});
