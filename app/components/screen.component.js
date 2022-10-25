@@ -6,7 +6,7 @@ import {colors} from '../styles';
 const Screen = ({children}) => {
   const insets = useSafeAreaInsets();
   return (
-    <View>
+    <View style={styles.container}>
       <View style={[styles.statusBar, {height: insets.top}]} />
       {children}
     </View>
@@ -16,6 +16,10 @@ const Screen = ({children}) => {
 export default Screen;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+  },
   statusBar: {
     backgroundColor: colors.yellow,
   },
