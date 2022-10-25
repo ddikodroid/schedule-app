@@ -10,9 +10,7 @@ import HomeHeader from './home-header.component';
 import HomeSection from './home-section.component';
 import TodayCard from './today-card.component';
 import NextScheduleCard from './next-schedule-card.component';
-
-const SCHEDULE_URL =
-  'https://gist.githubusercontent.com/ddikodroid/571f7a340bc5d33f22ece09b3af8738b/raw/cd2511cc9adb0cb100feecb8055c2dbcde02dd1f/schedule.json';
+import {SCHEDULE_URL} from '../../constants/url';
 
 const HomeScreen = () => {
   const year = dayjs().year();
