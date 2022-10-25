@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 16,
     borderRadius: 16,
+    marginHorizontal: 16,
     backgroundColor: colors.lightGrey,
   },
   locationText: {
