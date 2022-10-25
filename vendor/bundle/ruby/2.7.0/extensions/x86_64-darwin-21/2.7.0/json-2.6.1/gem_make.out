@@ -1,0 +1,13 @@
+current directory: /Users/diko/Documents/flash-coffee-coding-test/Flash/vendor/bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+/Users/diko/.rbenv/versions/2.7.4/bin/ruby -I /Users/diko/.rbenv/versions/2.7.4/lib/ruby/2.7.0 -r ./siteconf20221025-2385-kekt2a.rb extconf.rb
+creating Makefile
+
+current directory: /Users/diko/Documents/flash-coffee-coding-test/Flash/vendor/bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/diko/Documents/flash-coffee-coding-test/Flash/vendor/bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/diko/Documents/flash-coffee-coding-test/Flash/vendor/bundle/ruby/2.7.0/gems/json-2.6.1/ext/json
+make "DESTDIR=" install
