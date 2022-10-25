@@ -6,7 +6,7 @@ import {colors, fonts} from '../../styles';
 
 const ScheduleCard = ({
   noSchedule,
-  isToday,
+  isToday = false,
   date,
   location,
   startTime,
@@ -40,12 +40,19 @@ const ScheduleCard = ({
       </View>
       <View style={styles.rightContainer}>
         <Text style={styles.locationText}>{location}</Text>
-        <TimeInfo
-          startTime={startTime}
-          endTime={endTime}
-          iconSize={18}
-          textStyle={styles.timeText}
-        />
+        <View style={styles.timeContainer}>
+          <TimeInfo
+            startTime={startTime}
+            endTime={endTime}
+            iconSize={18}
+            textStyle={styles.timeText}
+          />
+          {isToday ? (
+            <View style={styles.todayContainer}>
+              <Text style={styles.todayText}>TODAY</Text>
+            </View>
+          ) : null}
+        </View>
       </View>
     </Pressable>
   );
@@ -103,10 +110,25 @@ const styles = StyleSheet.create({
     ...fonts.semiBold,
     color: colors.black,
   },
+  timeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   timeText: {
     fontSize: 13,
     marginStart: 8,
     ...fonts.regular,
     color: colors.black,
+  },
+  todayContainer: {
+    padding: 4,
+    marginStart: 8,
+    borderRadius: 4,
+    backgroundColor: colors.red,
+  },
+  todayText: {
+    fontSize: 12,
+    ...fonts.semiBold,
+    color: colors.white,
   },
 });

@@ -13,6 +13,7 @@ import {SCHEDULE_URL} from '../../constants/url';
 const ListScreen = () => {
   const year = dayjs().year();
   const month = dayjs().format('YYYY-MM');
+  const today = dayjs().format('YYYY-MM-D').toString();
 
   const insets = useSafeAreaInsets();
   const navigation = useNavigation();
@@ -42,6 +43,7 @@ const ListScreen = () => {
     return (
       <ScheduleCard
         noSchedule={item.schedule === null}
+        isToday={item.date === today}
         date={item.date}
         {...item.schedule}
         onPress={() =>
