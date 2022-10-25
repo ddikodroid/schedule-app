@@ -84,7 +84,8 @@ const HomeScreen = () => {
             />
           </HomeSection>
         </View>
-        <View style={[styles.buttonContainer, {marginBottom: insets.bottom}]}>
+        <View
+          style={[styles.buttonContainer, {marginBottom: insets.bottom + 12}]}>
           <Button
             title="Clock In"
             type="primary"
