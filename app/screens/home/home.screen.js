@@ -1,7 +1,7 @@
 import axios from 'axios';
 import dayjs from 'dayjs';
 import React, {useEffect, useState} from 'react';
-import {FlatList, StyleSheet, Text} from 'react-native';
+import {FlatList, ScrollView, StyleSheet, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Screen} from '../../components';
 import {colors, fonts} from '../../styles';
@@ -55,33 +55,35 @@ const HomeScreen = () => {
 
   return (
     <Screen>
-      <HomeHeader />
-      <HomeSection leftTitle="Today's Schedule" rightTitle="Refresh">
-        {todaySchedule != null ? (
-          <TodayCard
-            end={todaySchedule?.endTime}
-            start={todaySchedule?.startTime}
-            location={todaySchedule?.location}
-          />
-        ) : (
-          <Text style={styles.emptyPlaceholder}>
-            You don't have any schedule today.
-          </Text>
-        )}
-      </HomeSection>
+      <ScrollView bounces={false}>
+        <HomeHeader />
+        <HomeSection leftTitle="Today's Schedule" rightTitle="Refresh">
+          {todaySchedule != null ? (
+            <TodayCard
+              end={todaySchedule?.endTime}
+              start={todaySchedule?.startTime}
+              location={todaySchedule?.location}
+            />
+          ) : (
+            <Text style={styles.emptyPlaceholder}>
+              You don't have any schedule today.
+            </Text>
+          )}
+        </HomeSection>
 
-      <HomeSection
-        leftTitle="Next Schedule"
-        rightTitle="See all"
-        onPressRightTitle={() => navigation.navigate('List')}>
-        <FlatList
-          horizontal
-          data={nextSchedules.slice(currentDate)}
-          renderItem={renderNextSchedule}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.flatListContent}
-        />
-      </HomeSection>
+        <HomeSection
+          leftTitle="Next Schedule"
+          rightTitle="See all"
+          onPressRightTitle={() => navigation.navigate('List')}>
+          <FlatList
+            horizontal
+            data={nextSchedules.slice(currentDate)}
+            renderItem={renderNextSchedule}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.flatListContent}
+          />
+        </HomeSection>
+      </ScrollView>
     </Screen>
   );
 };
