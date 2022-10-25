@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     marginBottom: 12,
+    color: colors.black,
     ...fonts.condensedBold,
     textTransform: 'uppercase',
   },
