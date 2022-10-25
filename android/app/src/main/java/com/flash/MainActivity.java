@@ -1,6 +1,7 @@
 package com.flash;
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
+import com.zoontek.rnbootsplash.RNBootSplash;
 
 public class MainActivity extends ReactActivity {
 
@@ -16,6 +17,7 @@ public class MainActivity extends ReactActivity {
   //react-native-screens
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+    RNBootSplash.init(this); // <- react-native-bootsplash
     super.onCreate(null);
   }
 }
