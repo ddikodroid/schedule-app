@@ -2,7 +2,13 @@ import React from 'react';
 import {Pressable, StyleSheet, Text} from 'react-native';
 import {colors, fonts} from '../styles';
 
-const Button = ({title, type, disabled = false, containerStyle}) => {
+const Button = ({
+  title,
+  type,
+  disabled = false,
+  titleStyle,
+  containerStyle,
+}) => {
   return (
     <Pressable
       style={[
@@ -11,7 +17,7 @@ const Button = ({title, type, disabled = false, containerStyle}) => {
         disabled && styles.disabled,
         containerStyle,
       ]}>
-      <Text style={styles.titleText}>{title}</Text>
+      <Text style={[styles.titleText, titleStyle]}>{title}</Text>
     </Pressable>
   );
 };
