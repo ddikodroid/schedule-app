@@ -61,8 +61,8 @@ const HomeScreen = () => {
           <HomeSection leftTitle="Today's Schedule" rightTitle="Refresh">
             {todaySchedule != null ? (
               <TodayCard
-                end={todaySchedule?.endTime}
-                start={todaySchedule?.startTime}
+                startTime={todaySchedule?.startTime}
+                endTime={todaySchedule?.endTime}
                 location={todaySchedule?.location}
               />
             ) : (
