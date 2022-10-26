@@ -39,5 +39,6 @@ const styles = StyleSheet.create({
   timeText: {
     fontSize: 16,
     ...fonts.bold,
+    color: colors.black,
   },
 });
