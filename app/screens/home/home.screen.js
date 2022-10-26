@@ -10,7 +10,7 @@ import HomeHeader from './home-header.component';
 import HomeSection from './home-section.component';
 import TodayCard from './today-card.component';
 import NextScheduleCard from './next-schedule-card.component';
-import {SCHEDULE_URL} from '../../constants/url';
+import {IMAGE_URL, SCHEDULE_URL} from '../../constants/url';
 
 const HomeScreen = () => {
   const year = dayjs().year();
@@ -21,6 +21,7 @@ const HomeScreen = () => {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
 
+  const [image, setImage] = useState(null);
   const [schedules, setSchedules] = useState([]);
   const [nextSchedules, setNextSchedules] = useState([]);
   const todaySchedule = schedules?.[year]?.[month]?.[date];
@@ -42,7 +43,16 @@ const HomeScreen = () => {
         console.log('[ERROR] on getting schedules: ', error);
       }
     };
+    const getUserImage = async () => {
+      try {
+        const res = await axios.get(IMAGE_URL);
+        setImage(res.data.image);
+      } catch (error) {
+        console.log('[ERROR] on getting user image: ', error);
+      }
+    };
     getSchedules();
+    getUserImage();
   }, []);
 
   const renderNextSchedule = ({item, index}) => {
@@ -57,7 +67,7 @@ const HomeScreen = () => {
         bounces={false}
         contentContainerStyle={styles.scrollContentContainer}>
         <View>
-          <HomeHeader />
+          <HomeHeader userImage={image} />
           <HomeSection leftTitle="Today's Schedule" rightTitle="Refresh">
             {todaySchedule != null ? (
               <TodayCard

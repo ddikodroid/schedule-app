@@ -4,7 +4,7 @@ import {colors, fonts} from '../../styles';
 import {Bell} from '../../assets/svgs';
 import dayjs from 'dayjs';
 
-const HomeHeader = () => {
+const HomeHeader = ({userImage}) => {
   const [time, setTime] = useState(dayjs());
 
   useEffect(() => {
@@ -16,6 +16,7 @@ const HomeHeader = () => {
     <View style={styles.container}>
       <View style={styles.upperContainer}>
         <Image
+          source={{uri: userImage}}
           defaultSource={require('../../assets/images/default-profile.jpeg')}
           style={styles.avatar}
         />
