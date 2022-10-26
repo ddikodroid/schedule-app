@@ -75,5 +75,6 @@ const styles = StyleSheet.create({
   dateText: {
     fontSize: 14,
     ...fonts.medium,
+    color: colors.black,
   },
 });
