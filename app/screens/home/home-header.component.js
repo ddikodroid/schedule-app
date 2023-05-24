@@ -26,7 +26,7 @@ const HomeHeader = ({userImage}) => {
         <Bell />
       </View>
       <View style={styles.timeContainer}>
-        <Text style={styles.timeText}>{time.format('HH:mm')}</Text>
+        <Text style={styles.timeText}>{time.format('HH:mm:ss')}</Text>
         <Text style={styles.dateText}>{time.format('dddd, D MMM YYYY')}</Text>
       </View>
     </View>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   timeText: {
-    fontSize: 72,
+    fontSize: 54,
     ...fonts.bold,
     color: colors.black,
   },
